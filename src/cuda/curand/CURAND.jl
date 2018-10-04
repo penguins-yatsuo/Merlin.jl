@@ -1,7 +1,7 @@
 module CURAND
 
 if Sys.iswindows()
-    const libcurand = Libdl.find_library(["curand64_91","curand64_90","curand64_80","curand64_75"])
+    const libcurand = Libdl.find_library(["curand64_100", "curand64_91","curand64_90","curand64_80","curand64_75"])
 else
     const libcurand = Libdl.find_library(["libcurand"])
 end

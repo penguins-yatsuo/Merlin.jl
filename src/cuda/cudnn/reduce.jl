@@ -41,7 +41,8 @@ const DICT_ReduceTensorDesc = Dict()
 function reduce(A::CuArray{T}, dim, op) where T
     if size(A,dim) == 1 # CUDNN_STATUS_BAD_PARAM
         C = A
-        indices = zeros(CuArray{Cint}, length(A)÷size(A,dim))
+        # indices = zeros(CuArray{Cint}, length(A)÷size(A,dim))
+        indices = CuArray(zeros(Int32, length(C)))
         return C, indices
     end
 
